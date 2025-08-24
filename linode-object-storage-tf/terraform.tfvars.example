@@ -1,0 +1,40 @@
+# Linode API Token (Required)
+# Get your API token from: https://cloud.linode.com/profile/tokens
+linode_token = ""
+
+# Bucket Configuration
+bucket_label = "my-production-storage"
+cluster_region = "us-east-1"
+
+# Access Keys (Leave empty to auto-generate)
+access_key = ""
+secret_key = ""
+
+# Versioning and Lifecycle
+enable_versioning = true
+enable_lifecycle_rules = true
+lifecycle_expiration_days = 365
+noncurrent_version_expiration_days = 30
+abort_incomplete_multipart_days = 7
+
+# CORS Configuration
+cors_allowed_origins = ["*"]
+cors_allowed_methods = ["GET", "PUT", "POST", "DELETE", "HEAD"]
+cors_allowed_headers = ["*"]
+cors_exposed_headers = ["ETag"]
+cors_max_age_seconds = 3000
+
+# Additional Buckets
+create_backup_bucket = true
+backup_retention_days = 2555  # 7 years
+
+create_logs_bucket = true
+log_retention_days = 90
+
+# Access Keys
+create_readonly_key = true
+create_backup_key = false
+create_logs_key = false
+
+# Tags
+tags = ["terraform", "object-storage", "production", "my-project"]

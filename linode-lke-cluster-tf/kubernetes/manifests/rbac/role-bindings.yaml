@@ -1,0 +1,65 @@
+---
+# Developer ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: developer-binding
+  labels:
+    rbac.kubernetes.io/role: developer
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: developer-role
+subjects:
+- kind: ServiceAccount
+  name: developer-sa
+  namespace: rbac
+---
+# Monitoring ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: monitoring-binding
+  labels:
+    rbac.kubernetes.io/role: monitoring
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: monitoring-role
+subjects:
+- kind: ServiceAccount
+  name: monitoring-sa
+  namespace: rbac
+---
+# Read-Only ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: readonly-binding
+  labels:
+    rbac.kubernetes.io/role: readonly
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: readonly-role
+subjects:
+- kind: ServiceAccount
+  name: readonly-sa
+  namespace: rbac
+---
+# Application RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: application-binding
+  namespace: applications
+  labels:
+    rbac.kubernetes.io/role: application
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: application-role
+subjects:
+- kind: ServiceAccount
+  name: application-sa
+  namespace: rbac

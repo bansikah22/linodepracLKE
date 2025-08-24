@@ -1,0 +1,23 @@
+# Linode Terraform Configuration
+# Copy this file to terraform.tfvars and customize with your values
+
+# Required: Linode API token for authentication
+# Generate at: https://cloud.linode.com/profile/tokens
+linode_token = "your-linode-api-token-here"
+
+# Instance Configuration
+instance_label = "production-web-server"
+region         = "us-east"
+instance_type  = "g6-standard-1"
+image          = "linode/ubuntu22.04"
+
+# Required: Root password for the Linux server
+# Must be at least 11 characters with lowercase, uppercase, and numbers
+root_password = "YourSecurePassword123!"
+
+# Optional: Resource tags for organization
+tags = ["terraform", "web-server", "production"]
+
+# Optional: Block storage configuration
+create_volume = false
+volume_size   = 20

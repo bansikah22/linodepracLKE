@@ -1,0 +1,27 @@
+# Cluster Admin Role (Disabled by default for security)
+# Uncomment and apply this file only when cluster admin access is needed
+---
+# Cluster Admin Service Account
+# apiVersion: v1
+# kind: ServiceAccount
+# metadata:
+#   name: cluster-admin-sa
+#   namespace: rbac
+#   labels:
+#     rbac.kubernetes.io/role: cluster-admin
+---
+# Cluster Admin ClusterRoleBinding
+# apiVersion: rbac.authorization.k8s.io/v1
+# kind: ClusterRoleBinding
+# metadata:
+#   name: cluster-admin-binding
+#   labels:
+#     rbac.kubernetes.io/role: cluster-admin
+# roleRef:
+#   apiGroup: rbac.authorization.k8s.io
+#   kind: ClusterRole
+#   name: cluster-admin
+# subjects:
+# - kind: ServiceAccount
+#   name: cluster-admin-sa
+#   namespace: rbac
