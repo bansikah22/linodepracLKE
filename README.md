@@ -6,54 +6,6 @@ A comprehensive collection of Linode infrastructure and Kubernetes projects for 
 
 This repository contains modular, production-ready infrastructure projects for Linode Cloud Computing platform, focusing on Infrastructure as Code (IaC) with Terraform and container orchestration with Kubernetes.
 
-## 📁 Project Structure
-
-```
-linodepracLKE/
-├── linode-compute-mchn-tf/     # Linode Compute Instances with Terraform
-│   ├── main.tf                 # Main Terraform configuration
-│   ├── variables.tf            # Variable definitions
-│   ├── outputs.tf              # Output definitions
-│   ├── versions.tf             # Provider versions
-│   ├── terraform.tfvars.example # Configuration template
-│   ├── setup.sh                # Deployment script
-│   ├── destroy.sh              # Cleanup script
-│   └── docs/                   # Documentation
-│       ├── README.md           # Project overview
-│       ├── DEPLOYMENT.md       # Deployment guide
-│       ├── POST_DEPLOYMENT.md  # Post-deployment tasks
-│       └── STRUCTURE.md        # Architecture documentation
-│
-├── linode-lke-cluster-tf/      # Linode Kubernetes Engine (LKE) Cluster
-│   ├── terraform/              # Infrastructure as Code
-│   │   ├── modules/            # Reusable Terraform modules
-│   │   │   ├── lke-cluster/    # LKE cluster module
-│   │   │   ├── nodebalancer/   # Load balancer module
-│   │   │   ├── security/       # Security configurations
-│   │   │   └── monitoring/     # Monitoring framework
-│   │   ├── main.tf             # Main Terraform configuration
-│   │   ├── variables.tf        # Variable definitions
-│   │   ├── outputs.tf          # Output definitions
-│   │   ├── versions.tf         # Provider versions
-│   │   ├── terraform.tfvars    # Configuration values
-│   │   ├── setup.sh            # Infrastructure deployment
-│   │   └── destroy.sh          # Infrastructure cleanup
-│   ├── kubernetes/             # Kubernetes Applications
-│   │   ├── manifests/          # Kubernetes manifest files
-│   │   │   ├── apps/           # Application deployments
-│   │   │   ├── monitoring/     # Monitoring stack
-│   │   │   ├── security/       # Security policies
-│   │   │   └── ingress/        # Ingress configurations
-│   │   ├── helm-charts/        # Helm charts (future use)
-│   │   ├── scripts/            # Deployment scripts
-│   │   ├── kubeconfig.yaml     # Cluster access configuration
-│   │   └── README.md           # Kubernetes documentation
-│   ├── docs/                   # Project documentation
-│   └── README.md               # Project overview
-│
-└── README.md                   # This file
-```
-
 ## 🚀 Quick Start Guide
 
 ### 1. Linode Compute Instances
